@@ -10,10 +10,10 @@ export const Login = () => {
   return (
     //<LayoutComponents> importa o LayoutComponents
     <LayoutComponents>
-      <form className="login-form">
+      <form className="pages-form">
 
-        <span className="login-form-title">Wellcome!</span>
-        <span className="login-form-title">
+        <span className="pages-form-title">Wellcome!</span>
+        <span className="pages-form-title">
           <img src={jsxIMG} alt="React Icon" />
         </span>
 
@@ -23,7 +23,7 @@ export const Login = () => {
             value={email}
             onChange={(e) => setEmail(e.target.value)}
           />
-          <span className="focus-input" data-placeholder='Email'></span>
+          <span className="focus-input" data-placeholder='Email . . .'></span>
         </div>
 
         <div className="wrap-input">
@@ -32,18 +32,18 @@ export const Login = () => {
             value={password}
             onChange={(e) => setPassword(e.target.value)}
           />
-          <span className="focus-input" data-placeholder='Password'></span>
+          <span className="focus-input" data-placeholder='Password . . .'></span>
         </div>
 
-        <div className="container-login-form-btn">
-          <button className="login-form-btn">Sing in</button>
+        <div className="container-pages-form-btn">
+          <button className="pages-form-btn">Sing in</button>
         </div>
 
         <div className="text-center">
           <span className="text1">Don't have account?</span>
         </div>
         <div className='text-center'>
-          <Link className="text2" to="#">Create account!</Link>
+          <Link className="text2" to="/register">Create account!</Link>
         </div>
 
       </form>

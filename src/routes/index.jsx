@@ -8,13 +8,15 @@
 
 import { BrowserRouter as Router, Routes, Route} from 'react-router-dom';
 import { Login } from '../pages/Login';
+import { Register } from '../pages/Register';
 
 export const AppRouter = () => {
     // Prestar a atenção se o {login} está correto ou teremos que atualizar o caminho para {<login/>}
     return (
         <Router>
             <Routes>
-                <Route path='/' exact element={<Login />} />
+                <Route path='/login' exact element={<Login />} />
+                <Route path='/register' element={<Register />} />
             </Routes>
         </Router>
 

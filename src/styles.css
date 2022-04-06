@@ -17,7 +17,7 @@
     box-sizing: inherit;
     
 }
-.login-form-title {
+.pages-form-title {
     display: block;
     font-size: 30px;
     color: azure;
@@ -26,12 +26,12 @@
     text-align: center;
 }
 
-.login-form {
+.pages-form {
     width: 100%;
 }
 
 
-.login-form-title img{
+.pages-form-title img{
     width: 60px;
     
 }
@@ -137,13 +137,13 @@
 
 
 /*Agora vamos estilizar a classe container do btn*/
-.container-login-form-btn {
+.container-pages-form-btn {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
     padding-bottom: 10px;
 }
-.login-form-btn{
+.pages-form-btn{
     font-size: 15px;
     border: none;
     border-radius: 10px;
@@ -167,7 +167,7 @@
 
 }
 
-.login-form-btn:hover {
+.pages-form-btn:hover {
     cursor: pointer;
 
     background: -webkit-linear-Gradient(to left, #6563ff, #21d4fd);
