@@ -116,6 +116,7 @@
   
   .input:focus {
       outline: 0;
+      color: #fff;
   }
   
   /*Essa parte a seguir faz o efeito de focus no placeholder*/
