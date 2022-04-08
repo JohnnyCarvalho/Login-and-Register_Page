@@ -10,6 +10,6 @@ Login and register page with React JS in the Front End and Node JS in the Back E
 </div>
 
 # <h1 align="center"> The project .Gif </h1>
-<p>
-    <img src="./assers/LoginAndRegisterPage.gif">
-</p>
+<P align="center">
+    <img alt="Login-Page-React" width="460" heigth="300" src="src/assets/Readme/LoginAndRegisterPage.gif">
+</P>
