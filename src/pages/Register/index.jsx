@@ -2,15 +2,17 @@ import { LayoutComponents } from "../../components/layoutComponents";
 import { Link } from 'react-router-dom';
 import jsxIMG from '../../assets/jsx.png';
 import { useState } from 'react';
+import './styles.css';
 
 
+// Component: Register retornando HTML com o formulário de cadastro
 export const Register = () => {
     const [firstName, setFirstName] = useState('');
     const [lastName, setLastName] = useState('');
     const [email, setEmail] = useState('');
     const [password, setPassowrd] = useState('');
     const [confirmPassord, setConfirmPassord] = useState('');
-    
+    const [message, setMessage] = useState('');
 
     return (
         <LayoutComponents>
@@ -25,15 +27,15 @@ export const Register = () => {
                     <input className={firstName !== "" ? "has-val input" : "input"}
                         type="text"
                         value={firstName}
-                        onChange={(e) => setFirstName(e.target.value)}/>
-                        <span className="focus-input" data-placeholder="First Name . . ."></span>
+                        onChange={(e) => setFirstName(e.target.value)} />
+                    <span className="focus-input" data-placeholder="First Name . . ."></span>
                 </div>
 
                 <div className="wrap-input">
                     <input className={lastName !== "" ? "has-val input" : "input"}
-                    type="text"
-                    value={lastName}
-                    onChange={(e) => setLastName(e.target.value)}/>
+                        type="text"
+                        value={lastName}
+                        onChange={(e) => setLastName(e.target.value)} />
                     <span className="focus-input" data-placeholder="Last Name . . ."></span>
                 </div>
 
@@ -56,17 +58,20 @@ export const Register = () => {
                 </div>
 
                 <div className="wrap-input">
-                    <input className={confirmPassord !== "" ? "has-val input" : "input"} 
-                    type="password"
-                    value={confirmPassord}
-                    onChange={(e) => setConfirmPassord(e.target.value)}/>
+                    <input className={confirmPassord !== "" ? "has-val input" : "input"}
+                        type="password"
+                        value={confirmPassord}
+                        onChange={(e) => setConfirmPassord(e.target.value)} />
                     <span className="focus-input" data-placeholder="Confirm Password . . ."></span>
+                </div>
+
+                <div className="container-pages-form-btn">
+                    <button className="pages-form-btn">Register</button>
                 </div>
 
                 <div className='text-center'>
                     <Link className="text2" to="/login">Return</Link>
                 </div>
-
             </form>
         </LayoutComponents>
     );

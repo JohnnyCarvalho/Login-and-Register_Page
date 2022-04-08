@@ -1,6 +1,6 @@
 
 import { AppRouter } from './routes';
-import './styles.css';
+import '../src/assets/global.css';
 
 
 

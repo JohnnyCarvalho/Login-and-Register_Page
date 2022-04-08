@@ -1,0 +1,212 @@
+/*Reset styles HTML*/
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+          'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+          sans-serif;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+  
+  
+  }
+  *,
+  *:before,
+  *:after {
+      box-sizing: inherit;
+      
+  }
+  .pages-form-title {
+      display: block;
+      font-size: 30px;
+      color: azure;
+  
+      line-height: 1.2;
+      text-align: center;
+  }
+  
+  .pages-form {
+      width: 100%;
+  }
+  
+  
+  .pages-form-title img{
+      width: 60px;
+      
+      
+  }
+  
+  .wrap-input {
+      width: 100%;
+      position: relative;
+      border-bottom: 2px solid #fff;
+      margin-bottom: 37px;
+  }
+  
+  .input {
+      font-size: 15px;
+      color: #fff;
+      line-height: 1.2;
+      border: none;
+      display: block;
+  
+      width: 100%;
+      
+      height: 45px;
+  
+      background-color: transparent;
+  
+      padding: 0 5px;
+  }
+  
+  /*A estilização abaixo faz com que ao clicar na barra de e-mail ou password ela tenha animação de subir e abaixar o placeholder.*/
+  
+  .focus-input {
+      position: absolute;
+      display: block;
+      width: 100%;
+      height: 100%;
+      top: 0;
+      left: 0;
+      pointer-events: none;
+      color: #adadad;
+  }
+  
+  .focus-input::before {
+      content: "";
+      display: block;
+      position: absolute;
+      bottom: -2px;
+      left: 0;
+      width: 0;
+      height: 2px;
+  
+      -webkit-transition: all 0.4s;
+      -o-transition: all 0.4s;
+      -moz-transition: all 0.4s;
+  
+      background: -webkit-linear-Gradient(to left, #A020F0, #FF00FF, #FF1493	);
+      background: -o-linear-Gradient(to left, #A020F0, #FF00FF, #FF1493	);
+      background: -moz-linear-Gradient(to left, #A020F0, #FF00FF, #FF1493	);
+      background: linear-Gradient(to left, #A020F0, #FF00FF, #FF1493	);
+  }
+  
+  .focus-input::after {
+      font-size: 15px;
+      color: #fff;
+      line-height: 1.2;
+  
+      content: attr(data-placeholder);
+  
+      display: block;
+      width: 100%;
+      position: absolute;
+      top: 16px;
+      left: 0;
+  
+      padding: left 5px;
+  
+      -webkit-transition: all 0.4s;
+      -o-transition: all 0.4s;
+      -moz-transition: all 0.4s;
+      
+  
+  }
+  
+  .input:focus {
+      outline: 0;
+  }
+  
+  /*Essa parte a seguir faz o efeito de focus no placeholder*/
+  .input:focus + .focus-input::after {
+      top: -15px;
+      color: #A020F0
+
+  }
+  .input:focus + .focus-input::before {
+      width: 100%;
+  }
+  
+  /**/
+  .has-val + .focus-input::after {
+      top: -15px;
+  }
+  
+  .has-val + .focus-input::before {
+      width: 100%;
+  }
+  
+  
+  /*Agora vamos estilizar a classe container do btn*/
+  .container-pages-form-btn {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      padding-bottom: 10px;
+  }
+  .pages-form-btn{
+      font-size: 15px;
+      border: none;
+      border-radius: 10px;
+      color: #fff;
+  
+      line-height: 1.2;
+  
+      text-transform: uppercase;
+  
+      display: flex;
+      align-items: center;
+      justify-content: center;
+  
+      width: 100%;
+      height: 50px;
+  
+      background: -webkit-linear-Gradient(to left, #A020F0, #FF00FF, #FF1493	);
+      background: -o-linear-Gradient(to left, #A020F0, #FF00FF, #FF1493	);
+      background: -moz-linear-Gradient(to left, #9400D3, #BA55D3, #FF00FF	);
+      background: linear-Gradient(to left, #A020F0, #FF00FF, #FF1493	);;
+
+      
+  
+  }
+  
+  .pages-form-btn:hover {
+      cursor: pointer;
+  
+      background: -webkit-linear-Gradient(to left, #FF1493, #A020F0, #BA55D3	);
+      background: -o-linear-Gradient(to left, #FF1493, #A020F0, #BA55D3	);
+      background: -moz-linear-Gradient(to left, #FF1493, #A020F0, #BA55D3	);
+      background: linear-Gradient(to left, #FF1493, #A020F0, #BA55D3	);
+  }
+  
+  .text-center {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+  
+      margin: 25px;
+  }
+  
+  .text1 {
+      font-size: 15px;
+      color: #A020F0; /*Exatamente a mesma cor da img*/
+      line-height: 1.2;
+      text-align: center;
+      text-decoration: none;
+  }
+  .text2 {
+      font-size: 15px;
+      color: #FF1493;
+      line-height: 1.2;
+      text-align: center;
+      text-decoration: none;
+  }
+  
+  .text2:hover {
+      color: #A020F0; 
+      text-align: center;
+      text-decoration: none;
+      cursor: pointer;
+      
+  }
