@@ -14,6 +14,10 @@ export const Register = () => {
     const [confirmPassord, setConfirmPassord] = useState('');
     const [message, setMessage] = useState('');
 
+    // Função para cadastrar usuário
+    //...
+    
+
     return (
         <LayoutComponents>
             <form className="pages-form">
@@ -66,7 +70,15 @@ export const Register = () => {
                 </div>
 
                 <div className="container-pages-form-btn">
-                    <button className="pages-form-btn">Register</button>
+                    <button className="pages-form-btn"
+                        onClick={() => {
+                            if (password === confirmPassord) {
+                                setMessage('Cadastrado com sucesso!');
+                            } else {
+                                setMessage('As senhas não conferem!');
+                            }
+                        }}>Register</button>
+                    
                 </div>
 
                 <div className='text-center'>
