@@ -1,3 +1,5 @@
+import { firebaseApp } from "../../database/firebase";
+import { getFirestore, collection, addDoc } from "firebase/firestore";
 import { LayoutComponents } from "../../components/layoutComponents";
 import { Link } from 'react-router-dom';
 import jsxIMG from '../../assets/jsx.png';
@@ -7,16 +9,31 @@ import './styles.css';
 
 // Component: Register retornando HTML com o formulário de cadastro
 export const Register = () => {
-    const [firstName, setFirstName] = useState('');
-    const [lastName, setLastName] = useState('');
-    const [email, setEmail] = useState('');
-    const [password, setPassowrd] = useState('');
-    const [confirmPassord, setConfirmPassord] = useState('');
-    const [message, setMessage] = useState('');
+    const [firstName, setFirstName] = useState("");
+    const [lastName, setLastName] = useState("");
+    const [email, setEmail] = useState("");
+    const [password, setPassword] = useState("");
+    const [confirmPassord, setConfirmPassord] = useState("");
+    const [users, setUsers] = useState([]);
 
-    // Função para cadastrar usuário
-    //...
-    
+    const db = getFirestore(firebaseApp);
+    const usersCollectionRef = collection(db, "users");
+
+    async function criarDado() {
+        try {
+            const user = await addDoc(collection(db, "users"), {
+                firstName,
+                lastName,
+                email,
+                password,
+                confirmPassord,
+            });
+
+            console.log("dados salvos com sucessos", user);
+        } catch (e) {
+            console.error("Error adding document: ", e);
+        }
+    }
 
     return (
         <LayoutComponents>
@@ -56,7 +73,7 @@ export const Register = () => {
                     <input className={password !== "" ? "has-val input" : "input"} // Condição adicionada para verificar se o password está preenchido
                         type="password"
                         value={password}
-                        onChange={(e) => setPassowrd(e.target.value)}
+                        onChange={(e) => setPassword(e.target.value)}
                     />
                     <span className="focus-input" data-placeholder='Password . . .'></span>
                 </div>
@@ -70,14 +87,9 @@ export const Register = () => {
                 </div>
 
                 <div className="container-pages-form-btn">
-                    <button className="pages-form-btn"
-                        onClick={() => {
-                            if (password === confirmPassord) {
-                                setMessage('Cadastrado com sucesso!');
-                            } else {
-                                setMessage('As senhas não conferem!');
-                            }
-                        }}>Register</button>
+                    <button
+                    className="pages-form-btn"
+                    onClick={criarDado}>Register</button>
                     
                 </div>
 
@@ -87,4 +99,4 @@ export const Register = () => {
             </form>
         </LayoutComponents>
     );
-}
+};
